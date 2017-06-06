@@ -18,6 +18,9 @@
       <%= link_to "Articles", posts_path %>
       <a href="#">Projects</a>
       <a href="#">Contact</a>
+      <% if admin_signed_in? %>
+          <%= link_to "Log Out", destroy_admin_session_path, method: :delete %>
+      <% end %>
     </nav>
   </header>
 
