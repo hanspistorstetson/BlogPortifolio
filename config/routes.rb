@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   resources :posts
   get 'welcome/index'
   root 'welcome#index'
