@@ -35,7 +35,6 @@
     <nav>
       <a href="#"><%= link_to "Articles", posts_path %></a>
       <a href="#"><%= link_to "Projects", projects_path %></a>
-      <a href="#">Contact</a>
       <% if admin_signed_in? %>
           <%= link_to "Log Out", destroy_admin_session_path, method: :delete %>
       <% end %>
