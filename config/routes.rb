@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :posts
   get 'welcome/index'
+  get 'welcome/articles'
   root 'welcome#index'
   get '/.well-known/acme-challenge/:id' => 'welcome#letsencrypt'
 

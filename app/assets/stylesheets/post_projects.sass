@@ -1,0 +1,68 @@
+$dark: #424652
+$light: #9a9da4
+$highlight: #8bc6db
+$border: #E9E9E9
+$white: #FFFFFF
+=cf
+  &:before, &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
+#post-wrapper
+  padding: 3em 0
+  .post
+    text-align: center
+
+    .date
+      margin: 0
+      font-size: .9em
+    h2
+      margin: 0
+      font-size: 2em
+      text-transform: uppercase
+      a
+        text-decoration: none
+        color: $dark
+        &:hover
+          color: $highlight
+    hr
+      margin: 3em auto
+
+.pagination:before, .pagination:after
+  content: " "
+  display: table
+
+.pagination:after
+  clear: both
+
+.pagination
+  text-align: center
+  margin: 3em 0 0 0
+
+  a, .previous_page, .current, .next_page
+    padding: .75rem 1em
+    margin: 0 .25em
+    border-radius: .15em
+    line-height: 20px
+    text-decoraton: none
+    background: $white
+    font-weight: 700
+    font-size: .7em
+    font-style: normal
+    color: $dark
+    &:hover
+      background: $highlight
+      color: $white
+  .current
+    background: $highlight
+    color: $white
+  .disabled
+    color: #c0c0c0
+    &:hover
+      color: #c0c0c0
+      background: white
+
+
+
