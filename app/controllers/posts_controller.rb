@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def update
 
-    if @post.save
+    if @post.update post_params
       redirect_to @post, notice: "Updated breh"
     else
       render 'edit', notice: "You're fucking up bud"
