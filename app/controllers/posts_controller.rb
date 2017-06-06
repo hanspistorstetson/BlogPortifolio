@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
-
+    @posts = Post.all.order("created_at desc")
   end
 
   def show

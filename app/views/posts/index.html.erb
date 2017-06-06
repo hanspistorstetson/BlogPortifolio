@@ -1,30 +1,23 @@
-
 <h1 id="page-title">
   Blog Posts
 </h1>
-<% if admin_signed_in? %>
-    <h3>Welcome back bruh</h3>
-    <%= link_to "Add an Article", new_post_path %>
-<% end %>
-x
+
 
 <div id="post-wrapper" class="skinny-wrapper">
   <div class="post">
-    <p class="date">Monday June 5th</p>
-    <h2><a href="#">Why are you using Blogger??</a></h2>
-    <hr>
+    <% if admin_signed_in? %>
+        <p class="admin_welcome">Welcome back Hans</p>
+        <%= link_to "Add an Article", new_post_path, :class => "btn btn-success" %>
+        <hr>
+    <% end %>
   </div>
 
-  <div class="post">
-    <p class="date">Monday June 5th</p>
-    <h2><a href="#">Why are you using Blogger??</a></h2>
-    <hr>
-  </div>
-
-  <div class="post">
-    <p class="date">Monday June 5th</p>
-    <h2><a href="#">Why are you using Blogger??</a></h2>
-    <hr>
-  </div>
+  <% @posts.each do |post| %>
+      <div class="post">
+        <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+        <h2><a href="#"><%= link_to post.title, post %></a></h2>
+        <hr>
+      </div>
+  <% end %>
 
 </div>

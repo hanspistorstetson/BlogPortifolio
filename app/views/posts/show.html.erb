@@ -4,7 +4,14 @@
     <h1><%= @post.title %></h1>
     <hr>
   </header>
-
+  <div class="center">
+    <% if admin_signed_in? %>
+        <p class="admin_welcome">Your greatest creation Hans</p>
+        <%= link_to "Edit this Article", edit_post_path(@post), :class => "btn btn-warning" %>
+        <%= link_to "Delete this Article", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-danger" %>
+        <hr>
+    <% end %>
+  </div>
   <div id="content">
     <%= markdown @post.content %>
   </div>
