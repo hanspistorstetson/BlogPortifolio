@@ -2,13 +2,7 @@
 
 <html>
 
-  <head>
-    <title>Hans Pistor - Website Developer</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <script src="https://use.fontawesome.com/211c51ec0c.js"></script>
-  </head>
   <body>
-
     <div class="wrapper wrapper_padding clearfix">
       <div class="about welcome_content">
         <h2>About</h2>
@@ -28,12 +22,10 @@
       <div class="blogposts welcome_content">
         <h2>Blog Posts</h2>
         <hr>
-        <h3><a href="#">Why are you using Blogger??</a></h3>
-        <p class="date">Monday, June 5th</p>
-        <h3><a href="#">Why are you using Blogger??</a></h3>
-        <p class="date">Monday, June 5th</p>
-        <h3><a href="#">Why are you using Blogger??</a></h3>
-        <p class="date">Monday, June 5th</p>
+        <% @posts.each do |post| %>
+            <h3><a href="#"><%= link_to post.title, post %></a></h3>
+            <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+        <% end %>
       </div>
       <div class="projects welcome_content">
         <h2>Projects</h2>
@@ -47,15 +39,6 @@
 
       </div>
     </div>
-
-    <footer id="main-footer">
-      <p class="copyright">&copy;2017 Hans Pistor</p>
-      <nav>
-        <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-        <a href=""><i class="fa fa-github" aria-hidden="true"></i></a>
-      </nav>
-    </footer>
 
   </body>
 
