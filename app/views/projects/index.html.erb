@@ -1,0 +1,44 @@
+<h1 id="page-title">
+  Projects
+</h1>
+
+<div id="post-wrapper" class="skinny-wrapper">
+  <div class="post">
+    <% if admin_signed_in? %>
+        <p class="admin_welcome">Welcome back Hans</p>
+        <%= link_to "Add a Project", new_project_path, :class => "btn btn-success" %>
+        <hr>
+    <% end %>
+  </div>
+</div>
+
+<div id="project-wrapper" class="skinny-wrapper">
+  <% @projects.each do |project| %>
+      <div class="project">
+        <p class="date"><%= project.created_at.strftime("%A, %b %d") %></p>
+        <h2><a href="#"><%= link_to project.name, project %></a></h2>
+      </div>
+  <% end %>
+
+  <div class="clearfix"></div>
+</div>
+
+<!--
+<tbody>
+  <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.name %></td>
+        <td><%= project.content %></td>
+        <td><%= project.projecturl %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+  <% end %>
+</tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>
+-->

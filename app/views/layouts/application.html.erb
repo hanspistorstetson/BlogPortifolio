@@ -15,8 +15,8 @@
   <header id="main-nav" class="clearfix">
     <%= link_to "Hans Pistor", root_path, class: "name" %>
     <nav>
-      <%= link_to "Articles", posts_path %>
-      <a href="#">Projects</a>
+      <a href="#"><%= link_to "Articles", posts_path %></a>
+      <a href="#"><%= link_to "Projects", projects_path %></a>
       <a href="#">Contact</a>
       <% if admin_signed_in? %>
           <%= link_to "Log Out", destroy_admin_session_path, method: :delete %>
@@ -31,6 +31,7 @@
     <% if alert %>
         <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+
     <%= yield %>
   </body>
 

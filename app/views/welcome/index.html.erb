@@ -9,7 +9,7 @@
         <hr>
         <p>I'm a website and software developer living in Florida.</p>
         <p>
-          I attend Stetson University for Computer Science.I'm a
+          I attend Stetson University for Computer Science. I'm a
           member of many clubs including the Sigma Nu Fraternity
           and Stetson Kiwanis Club.
         </p>
@@ -31,12 +31,10 @@
       <div class="projects welcome_content">
         <h2>Projects</h2>
         <hr>
-        <h3><a href="#">Why are you using Blogger??</a></h3>
-        <p class="date">Monday, June 5th</p>
-        <h3><a href="#">Why are you using Blogger??</a></h3>
-        <p class="date">Monday, June 5th</p>
-        <h3><a href="#">Why are you using Blogger??</a></h3>
-        <p class="date">Monday, June 5th</p>
+        <% @projects.each do |project| %>
+            <h3><a href="#"><%= link_to project.name, project %></a></h3>
+            <p class="date"><%= project.created_at.strftime("%A, %b %d") %></p>
+        <% end %>
 
       </div>
     </div>
