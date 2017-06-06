@@ -4,11 +4,27 @@
     <title>Untitled</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <title>Hans Pistor - Website Developer</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <script src="https://use.fontawesome.com/211c51ec0c.js"></script>
+
   </head>
 
   <body>
     <%= yield %>
   </body>
+
+  <header id="main-nav" class="clearfix">
+    <a href="#" class="name">Hans Pistor</a>
+    <nav>
+      <%= link_to "Articles", posts_path %>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+
 </html>
