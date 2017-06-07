@@ -12,10 +12,19 @@
     <% end %>
   </div>
 
+  <div id="tag_cloud">
+    <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+    <% end %>
+    <hr>
+  </div>
   <% @posts.each do |post| %>
       <div class="post">
         <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
         <h2><a href="#"><%= link_to post.title, post %></a></h2>
+        <p>
+          <%= raw post.tags.map(&:name).map {|t| link_to t, tag_path(t)}.join(', ') %>
+        </p>
         <hr>
       </div>
   <% end %>

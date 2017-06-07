@@ -4,7 +4,12 @@ class PostsController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
-    @posts = Post.all.order("created_at desc").paginate(:page => params[:page], :per_page => 5)
+
+    @posts = if params[:tag]
+               Post.tagged_with(params[:tag]).order("created_at desc").paginate(:page => params[:page], :per_page => 5)
+             else
+               Post.all.order("created_at desc").paginate(:page => params[:page], :per_page => 5)
+             end
   end
 
   def show
@@ -48,7 +53,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :tag_list)
   end
 
   def find_post
