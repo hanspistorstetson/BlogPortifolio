@@ -1,65 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%= csrf_meta_tags %>
+  <title>Hans Pistor - Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'test' %>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <style>
+    body, h1, h2, h3, h4, h5 {
+      font-family: "Raleway", sans-serif
+    }
+  </style>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <title>Hans Pistor - Website Developer</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <script src="https://use.fontawesome.com/211c51ec0c.js"></script>
+  <header>
+    <nav class="navbar navbar-default" role="navigation">
 
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle"
+                data-toggle="collapse" data-target="#example-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
-        ga('create', 'UA-100463127-2', 'auto');
-        ga('send', 'pageview');
+        <%= link_to 'Hans Pistor', root_path, class: "navbar-brand" %>
+      </div>
 
-    </script>
+      <div class="collapse navbar-right navbar-collapse" id="example-navbar-collapse">
 
-  </head>
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Posts', posts_path %></li>
+          <li><%= link_to 'Projects', projects_path %></li>
 
-  <header id="main-nav" class="clearfix">
-    <%= link_to "Hans Pistor", root_path, class: "name" %>
-    <nav>
-      <a href="#"><%= link_to "Articles", posts_path %></a>
-      <a href="#"><%= link_to "Projects", projects_path %></a>
-      <% if admin_signed_in? %>
-          <%= link_to "Log Out", destroy_admin_session_path, method: :delete %>
-      <% end %>
+
+        </ul>
+      </div>
+
     </nav>
   </header>
 
   <body>
-    <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-
-    <%= yield %>
+    <div id="allcontent">
+      <%= yield %>
+    </div>
   </body>
 
-  <footer id="main-footer">
-    <p class="copyright">&copy;2017 Hans Pistor</p>
-    <nav>
-      <a href="http://twitter.com/hansthezulu" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-      <a href="https://www.linkedin.com/in/hans-pistor-172914137/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-      <a href="https://github.com/hanspistorstetson" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-    </nav>
-  </footer>
+  <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
 
+  </footer>
 
 </html>

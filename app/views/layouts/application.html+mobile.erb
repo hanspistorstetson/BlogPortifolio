@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'applicationmobile', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'applicationmobile', 'data-turbolinks-track': 'reload' %>
+
+    <title>Hans Pistor - Website Developer</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <script src="https://use.fontawesome.com/211c51ec0c.js"></script>
+    <meta name="viewport" content="width=device-width">
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-100463127-2', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+  </head>
+
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header five">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="name-div">
+            <%= link_to "Hans Pistor", root_path, class: "name" %>
+          </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="navbar-paths"><a href="#"><%= link_to "Articles", posts_path %></a></li>
+            <li class="navbar-paths"><a href="#"><%= link_to "Projects", projects_path %></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </header>
+
+  <body>
+    <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+  </body>
+
+
+  <footer id="main-footer">
+    <p class="copyright">&copy;2017 Hans Pistor</p>
+    <nav>
+      <a href="http://twitter.com/hansthezulu" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/in/hans-pistor-172914137/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <a href="https://github.com/hanspistorstetson" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+    </nav>
+  </footer>
+
+</html>

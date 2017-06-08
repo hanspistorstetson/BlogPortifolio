@@ -1,46 +1,58 @@
-<!DOCTYPE html>
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="content" style="max-width:1400px">
 
-<html>
 
-  <body>
-    <div class="wrapper wrapper_padding clearfix">
-      <div class="about welcome_content">
-        <h2>About</h2>
-        <hr>
-        <p><%= link_to image_tag("me.png", class: "portrait") %></p>
-        <p>I'm a website and software developer living in
-          Florida.</p>
-        <p>
-          I attend Stetson University for Computer Science. I'm a
-          member of many clubs including the Sigma Nu Fraternity
-          and Stetson Kiwanis Club.
-        </p>
-        <p>
-          Find me complaining on my lack
-          of creativity on any social media platform, mainly
-          Reddit and Twitter
-        </p>
-      </div>
-      <div class="blogposts welcome_content">
-        <h2>Blog Posts</h2>
-        <hr>
-        <% @posts.each do |post| %>
+  <!-- Grid -->
+  <div class="row">
 
-            <h3><a href="#"><%= link_to post.title, post %></a></h3>
-            <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
-        <% end %>
-      </div>
-      <div class="projects welcome_content">
-        <h2>Projects</h2>
-        <hr>
-        <% @projects.each do |project| %>
-            <h3><a href="#"><%= link_to project.name, project %></a></h3>
-            <p class="date"><%= project.created_at.strftime("%A, %b %d") %></p>
-        <% end %>
+    <div class="about col-md-4">
 
-      </div>
+      <h2>About</h2>
+      <hr class="stylediv">
+      <p><%= link_to image_tag("me.png", class: "portrait") %></p>
+      <p>I'm a website and software developer living in
+        Florida.</p>
+      <p>
+        I attend Stetson University for Computer Science. I'm a
+        member of many clubs including the Sigma Nu Fraternity
+        and Stetson Kiwanis Club.
+      </p>
+      <p>
+        Find me complaining on my lack
+        of creativity on any social media platform, mainly
+        Reddit and Twitter
+      </p>
+
     </div>
+    <hr class="mobilediv center-block">
+    <div class="posts col-md-4 center-block">
+      <h2>Blog Posts</h2>
+      <hr class="stylediv center-block">
+      <% @posts.each do |post| %>
 
-  </body>
+          <h3><a href="#"><%= link_to post.title, post %></a></h3>
+          <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+      <% end %>
+    </div>
+    <hr class="mobilediv">
+    <div class="projects col-md-4 center-block">
+      <h2>Projects</h2>
+      <hr class="stylediv center-block">
+      <% @projects.each do |project| %>
+          <h3><a href="#"><%= link_to project.name, project %></a></h3>
+          <p class="date"><%= project.created_at.strftime("%A, %b %d") %></p>
+      <% end %>
+    </div>
+    <hr class="mobilediv">
 
-</html>
+
+  </div>
+  <br>
+
+  <!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+
+

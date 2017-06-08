@@ -40,7 +40,8 @@ gem 'pygments.rb'
 gem 'redcarpet', '~> 3.0.0'
 gem 'devise'
 gem 'will_paginate'
-require "browser"
+gem "browser"
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

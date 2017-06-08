@@ -1,0 +1,205 @@
+$dark: #424652;
+$light: #9a9da4;
+$highlight: #8bc6db;
+$border: #E9E9E9;
+$white: #FFFFFF;
+
+@mixin cf {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+#tag_cloud {
+  hr {
+    margin: 3rem auto;
+  }
+
+  text-align: center;
+  line-height: 1.6em;
+  word-spacing: 30px;
+
+  .s {
+    font-size: 1em;
+  }
+
+  .m {
+    font-size: 1.2em;
+  }
+
+  .l {
+    font-size: 1.4em;
+  }
+}
+
+#post-wrapper {
+  padding: 3em 0;
+
+  .post {
+    text-align: center;
+
+    .date {
+      margin: 0;
+      font-size: 0.9em;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 2em;
+      text-transform: uppercase;
+
+      a {
+        text-decoration: none;
+        color: $dark;
+
+        &:hover {
+          color: $highlight;
+        }
+      }
+    }
+
+    hr {
+      margin: 3em auto;
+    }
+  }
+}
+
+.admin_welcome {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+// - - - - - - Post Form
+.post-form {
+  padding: 0 0 2rem 0;
+}
+
+// - - - - - - Post Show
+
+#post-show-content {
+  header {
+    text-align: center;
+
+    .date {
+      font-size: 0.9em;
+      color: $light;
+      margin: 0em;
+    }
+
+    h1 {
+      font-size: 300%;
+      margin: 0;
+    }
+  }
+
+  hr {
+    margin: 3em auto;
+  }
+
+  #content {
+    p {
+      font-size: 150%;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 300%;
+    }
+
+    h2 {
+      font-size: 250%;
+    }
+
+    h3 {
+      font-size: 200%;
+    }
+  }
+}
+
+#share_box {
+  text-align: center;
+
+  p {
+    padding: 0 0 1em 0;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $dark;
+    font-size: 0.8em;
+  }
+
+  i {
+    color: $dark;
+    padding: 1em 1.5em;
+
+    &:hover {
+      color: $highlight;
+      cursor: pointer;
+    }
+  }
+}
+
+.admin-show {
+  padding: 1rem;
+
+  hr {
+    margin: 3rem auto;
+  }
+}
+
+// - - - - - - Pagination
+
+.pagination:before, .pagination:after {
+  content: " ";
+  display: table;
+}
+
+.pagination:after {
+  clear: both;
+}
+
+.pagination {
+  text-align: center;
+  margin: 3em 0 0 0;
+
+  a, .previous_page, .current, .next_page {
+    padding: 0.75rem 1em;
+    margin: 0 0.25em;
+    border-radius: 0.15em;
+    line-height: 20px;
+    text-decoraton: none;
+    background: $white;
+    font-weight: 700;
+    font-size: 0.7em;
+    font-style: normal;
+    color: $dark;
+
+    &:hover {
+      background: $highlight;
+      color: $white;
+    }
+  }
+
+  .current {
+    background: $highlight;
+    color: $white;
+  }
+
+  .disabled {
+    color: #c0c0c0;
+
+    &:hover {
+      color: #c0c0c0;
+      background: white;
+    }
+  }
+}
