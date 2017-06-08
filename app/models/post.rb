@@ -2,7 +2,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :content, presence: true
-  has_many :taggings
+  has_many :taggings, :dependent => :destroy
   has_many :tags, through: :taggings
 
   def self.tagged_with(name)

@@ -477,5 +477,10 @@ $dropDown: true;
   }
 }
 
+textarea {
+  min-height: 20em;
+}
+
 @import 'posts';
+@import 'form';
 @import 'projects';
