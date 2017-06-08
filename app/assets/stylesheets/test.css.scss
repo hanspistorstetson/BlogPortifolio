@@ -331,6 +331,7 @@ $dropDown: true;
     border: 1px solid $light;
     &:hover, &:focus {
       color: $colHighlight;
+      border: 1px solid $highlight;
     }
   }
   .navbar-text {
@@ -465,6 +466,15 @@ $dropDown: true;
 #allcontent {
   width: 90%;
   margin: 0 auto;
+}
+
+.post, .project {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: $highlight
+  }
 }
 
 @import 'posts';

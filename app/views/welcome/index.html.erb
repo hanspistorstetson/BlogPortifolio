@@ -31,7 +31,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       <hr class="stylediv center-block">
       <% @posts.each do |post| %>
 
-          <h3><a href="#"><%= link_to post.title, post %></a></h3>
+          <h3><a href="#"><%= link_to post.title, post, class: "post" %></a></h3>
           <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
       <% end %>
     </div>
@@ -40,7 +40,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h2>Projects</h2>
       <hr class="stylediv center-block">
       <% @projects.each do |project| %>
-          <h3><a href="#"><%= link_to project.name, project %></a></h3>
+          <h3><a href="#"><%= link_to project.name, project, class: "project" %></a></h3>
           <p class="date"><%= project.created_at.strftime("%A, %b %d") %></p>
       <% end %>
     </div>
