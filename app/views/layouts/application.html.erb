@@ -33,7 +33,9 @@
         <ul class="nav navbar-nav">
           <li><%= link_to 'Posts', posts_path %></li>
           <li><%= link_to 'Projects', projects_path %></li>
-
+          <% if admin_signed_in? %>
+              <li><%= link_to "Sign Out", destroy_admin_session_path %></li>
+          <% end %>
 
         </ul>
       </div>
