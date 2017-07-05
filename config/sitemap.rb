@@ -15,6 +15,11 @@ SitemapGenerator::Sitemap.create do
   #
   # Examples:
   #
+  # How to Run
+  #
+  #
+  #
+  #
   # Add '/articles'
   #
   #   add articles_path, :priority => 0.7, :changefreq => 'daily'
