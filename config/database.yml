@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: tt_production
-  username: tt
-  password: <%= ENV['TT_DATABASE_PASSWORD'] %>
+    database: <%= ENV['RDS_DB_NAME'] %>
+    username: <%= ENV['RDS_USERNAME'] %>
+    password: <%= ENV['RDS_PASSWORD'] %>
+    host: <%= ENV['RDS_HOSTNAME'] %>
+    port: <%= ENV['RDS_PORT'] %>
