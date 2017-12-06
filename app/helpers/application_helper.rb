@@ -4,26 +4,29 @@ module ApplicationHelper
   require 'rouge/plugins/redcarpet'
 
   class HTML < Redcarpet::Render::HTML
-  include Rouge::Plugins::Redcarpet
+    include Rouge::Plugins::Redcarpet
   end
 
 
   def markdown(content)
 
-    options = {
-        filter_html: true,
-        hard_wrap: true,
-        autolink: true,
-        no_intra_emphasis: true,
-        disable_indented_code_blocks: true,
-        lax_html_blocks: true,
-        strikethrough: true,
-        superscript: true,
-        fenced_code_blocks: true
+    render_options = {
+      filter_html: true,
+      hard_wrap: true,
+      link_attributes: { rel: 'nofollow' }
     }
 
-    renderer = Redcarpet::Render::HTML.new(options)
-    Redcarpet::Markdown.new(renderer, options).render(content).html_safe
+    extensions = {
+      autolink: true,
+      fenced_code_blocks: true,
+      lax_spacing: true,
+      no_intra_emphasis: true,
+      strikethrough: true,
+      superscript: true
+    }
+    renderer = HTML.new(render_options)  
+    markdown = Redcarpet::Markdown.new(renderer, extensions)
+    markdown.render(content)
   end
 
   def tag_cloud(tags, classes)
