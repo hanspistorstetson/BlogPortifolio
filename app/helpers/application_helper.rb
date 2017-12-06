@@ -1,10 +1,10 @@
 module ApplicationHelper
   require 'redcarpet'
-  require 'rouge'
-  require 'rouge/plugins/redcarpet'
 
   class HTML < Redcarpet::Render::HTML
-    include Rouge::Plugins::Redcarpet
+    def block_code(code ,language)
+      CodeRay.scan(code, language).div
+    end
   end
 
 
