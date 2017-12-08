@@ -122,6 +122,15 @@ $white: #FFFFFF;
     h3 {
       font-size: 200%;
     }
+    a {
+      text-decoration: none;
+      color: $light;
+  
+      &:hover {
+        color: $highlight;
+        text-decoration: none;
+      }
+    }
   }
 }
 
