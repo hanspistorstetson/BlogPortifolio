@@ -124,8 +124,16 @@ $white: #FFFFFF;
     }
     a {
       text-decoration: none;
-      color: $light;
-  
+
+      &:link {
+        color: red;
+      }
+
+      &:visited {
+        color: green;
+      }
+
+      
       &:hover {
         color: $highlight;
         text-decoration: none;
