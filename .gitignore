@@ -19,7 +19,8 @@
 
 /node_modules
 /yarn-error.log
-
+app.yaml
+/.vscode
 .byebug_history
 
 # Elastic Beanstalk Files
