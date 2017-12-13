@@ -3,6 +3,7 @@ module ApplicationHelper
 
   class HTML < Redcarpet::Render::HTML
     def block_code(code ,language)
+      print(code)
       CodeRay.scan(code, language).div
     end
   end
