@@ -23,7 +23,6 @@ module ApplicationHelper
       lax_spacing: true,
       no_intra_emphasis: true,
       strikethrough: true,
-      superscript: true
     }
     renderer = HTML.new(render_options)  
     markdown = Redcarpet::Markdown.new(renderer, extensions)
