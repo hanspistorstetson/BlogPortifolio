@@ -1,76 +1,99 @@
 <!DOCTYPE html>
 <html>
-  <title>Hans Pistor - Developer</title>
-  <meta charset="UTF-8">
-  <%= csrf_meta_tag %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag 'test' %>
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway">
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <style>
-    body, h1, h2, h3, h4, h5 {
-      font-family: "Raleway", sans-serif
-    }
-  </style>
+<title>Hans Pistor - Developer</title>
+<meta charset="UTF-8">
+<%= csrf_meta_tag %>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<%= stylesheet_link_tag 'test' %>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway">
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<style>
+  body, h1, h2, h3, h4, h5 {
+    font-family: "Raleway", sans-serif
+  }
+</style>
 
-  <script type="text/x-mathjax-config">
+<script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath:[['$','$']]}});
-  </script>
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-  <head>
+
+
+
+
+
+
+
+
+
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111392537-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111392537-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-111392537-1');
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'UA-111392537-1');
+  </script>
+
+  <meta name="google-site-verification" content="vkIycLFyG9euzcHxRls_WY0VlL7CVgo486NqrADvOaE"/>
+  <%= favicon_link_tag 'favicon.ico' %>
+</head>
+
+<header>
+  <nav class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle"
+              data-toggle="collapse" data-target="#example-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <%= link_to 'Hans Pistor', root_path, class: "navbar-brand" %>
+    </div>
+
+    <div class="collapse navbar-right navbar-collapse" id="example-navbar-collapse">
+
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Posts', posts_path %></li>
+        <li><%= link_to 'Projects', projects_path %></li>
+        <% if admin_signed_in? %>
+          <li><%= link_to "Sign Out", destroy_admin_session_path %></li>
+        <% end %>
+
+      </ul>
+    </div>
+
+  </nav>
+</header>
+
+<body>
+<div id="allcontent">
+  <%= yield %>
+</div>
+</body>
+
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+
+</footer>
+
+<script type="text/javascript">
+    if (window.MathJax) {
+        MathJax.Hub.Queue(
+            ['Typeset', MathJax.Hub]
+        );
+    }
 </script>
 
-  <meta name="google-site-verification" content="vkIycLFyG9euzcHxRls_WY0VlL7CVgo486NqrADvOaE" />
-  <%= favicon_link_tag 'favicon.ico' %>    
-  </head>
-
-  <header>
-    <nav class="navbar navbar-default" role="navigation">
-
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle"
-                data-toggle="collapse" data-target="#example-navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <%= link_to 'Hans Pistor', root_path, class: "navbar-brand" %>
-      </div>
-
-      <div class="collapse navbar-right navbar-collapse" id="example-navbar-collapse">
-
-        <ul class="nav navbar-nav">
-          <li><%= link_to 'Posts', posts_path %></li>
-          <li><%= link_to 'Projects', projects_path %></li>
-          <% if admin_signed_in? %>
-              <li><%= link_to "Sign Out", destroy_admin_session_path %></li>
-          <% end %>
-
-        </ul>
-      </div>
-
-    </nav>
-  </header>
-
-  <body>
-    <div id="allcontent">
-      <%= yield %>
-    </div>
-  </body>
-
-  <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-
-  </footer>
 
 </html>
